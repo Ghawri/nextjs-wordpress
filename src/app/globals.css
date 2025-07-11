@@ -1,0 +1,258 @@
+@import "tailwindcss";
+
+.overlay {
+  background-color: rgba(4, 86, 81, 0.85);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Custom font for heading (serif style) */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap'); */
+
+.heading-font {
+  font-family: 'Roboto Slab', serif;
+}
+
+.nav-item:hover>.dropdown {
+  display: block;
+}
+
+/* Social icons container */
+.social-icons>button {
+  background-color: #06514f;
+  opacity: 0.8;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.social-icons>button:hover {
+  background-color: #3fb3a6;
+  opacity: 1;
+}
+
+.social-icons svg {
+  stroke: white;
+  width: 18px;
+  height: 18px;
+}
+
+/* Scroll bar fix for nav dropdown below */
+.dropdown {
+  display: none;
+  position: absolute;
+  background: rgba(255 255 255 / 0.95);
+  box-shadow: 0 15px 20px rgb(0 0 0 / 0.15);
+  border-radius: 4px;
+  margin-top: 8px;
+  min-width: 160px;
+  z-index: 100;
+}
+
+.dropdown a {
+  padding: 10px 16px;
+  display: block;
+  color: #064531;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.dropdown a:hover {
+  background-color: #3fb3a6;
+  color: white;
+  border-radius: 4px;
+}
+
+.main {
+
+  background-color: #06514f;
+}
+
+button.read-more {
+          background-color: #13584a;
+          color: white;
+          font-weight: 600;
+          padding: 0.8rem 2rem;
+          border-radius: 0.5rem;
+          border: none;
+          cursor: pointer;
+          font-size: 1rem;
+          transition: background-color 0.3s ease;
+          font-family: "Arial", sans-serif;
+        }
+        button.read-more:hover {
+          background-color: #0e4236;
+        }
+
+
+
+
+.tinted-bg {
+  position: relative;
+  background-image: url('/images/Home-01-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.tinted-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(37, 117, 104, 0.89); /* green tint */
+  z-index: 1;
+}
+
+.tinted-bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+.service-section {
+  background-color: #7a8f8e;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 16px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.card {
+  min-width: 250px;
+  height: 150px;
+  background-color: #4caf50;
+  color: white;
+  flex-shrink: 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.card-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 16px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.card {
+  min-width: 250px;
+  height: 150px;
+  background-color: #4caf50;
+  color: white;
+  flex-shrink: 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+  ul.features {
+          list-style: none;
+          padding-left: 0;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(140px, 1fr));
+          gap: 0.8rem 2rem;
+          margin-bottom: 2rem;
+        }
+        ul.features li {
+          font-size: 1rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: #444;
+          font-weight: 500;
+        }
+        ul.features li::before {
+          content: "\2713";
+          color: #ee8663;
+          font-weight: bold;
+          margin-right: 0.5rem;
+          font-size: 1.2rem;
+          line-height: 1;
+        }
+
+        .grid {
+  display: grid;
+  gap: 9rem;
+}
+
+.counters{
+  margin-top: 20vh;
+  height: 30vh;
+  padding: 3em 2em;
+background: #064531;
+  text-align: center ;
+  color: white
+}
+  .counters > div{
+    max-width:900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4em 2em;
+  }
+  .counter{
+    position: relative;
+  }
+  .counter:not(:last-child)::before{
+    content:'';
+    background: #fff;
+    position: absolute;
+    width:2px;
+  height: 3em;
+top:50%;
+transform: translateY(-50%); 
+right:-1em; }
+.tinted-counter{
+  position: relative;
+
+  background-image: url('http://localhost/wordpress/wp-content/uploads/2023/12/bg-image.jpg');
+  background-size: cover;
+  background-position: center;
+ 
+  overflow: hidden;
+  
+   width: 100%
+}
+
+.tinted-counter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(37, 117, 104, 0.89); /* green tint with opacity */
+  z-index: 1;
+}
+
+.tinted-counter > * {
+  position: relative;
+  z-index: 2; /* Ensure content is above the tint */
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
