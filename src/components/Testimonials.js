@@ -2,11 +2,18 @@
 import React, { useEffect,useRef } from 'react';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 gsap.registerPlugin(ScrollTrigger);
 
 import { useState } from 'react';
 
-const slides = [
+
+
+const Testimonials = ({ sections}) => {
+
+
+
+    const slides = [
     {
         id: 1,
         text: "“Cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid.”",
@@ -16,7 +23,7 @@ const slides = [
     {
         id: 2,
         text: "“Ignissimos ducimus ui blandiitis praesentium voluptatum deleniti atqui corrupti quos dolores aet quas molestias excepturi, sint occaesatii gnissimos ducimus molestiae non recusandae itarue earum rerum tenetur a saiente delectus.”",
-        img: "/images/client-img4.jpg",
+        img:"/images/client-img4.jpg",
         customer: "Methew John"
     },
     {
@@ -34,12 +41,10 @@ const slides = [
     {
         id: 5,
         text: "“Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        img: "/images/client-img1.jpg",
+        img:"/images/client-img1.jpg",
         customer: "Mark Jack"
     },
 ];
-
-const Testimonials = () => {
 
      const containerRef = useRef();
 
@@ -82,10 +87,10 @@ const Testimonials = () => {
             {/* Heading */}
             <div className="text-heading flex flex-col items-center mb-[5vh] text-center">
                 <div className="title text-[#ef7e63] text-[2vh] font-semibold">
-                    <h2>Testimonials</h2>
+                    <h2>{sections[8]?.text?.[0]}</h2>
                 </div>
                 <div ref={containerRef}  className=" animate-heading sub-title text-[4vh] sm:text-[5vh] md:text-[6vh] font-bold">
-                    <h2>What Our Patients are Saying</h2>
+                    <h2>{sections[8]?.text?.[1]}</h2>
                 </div>
             </div>
 

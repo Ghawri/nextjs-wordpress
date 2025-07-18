@@ -1,19 +1,23 @@
 'use client';
 import { useRef, useState, useEffect } from 'react';
 
-const cards = [
-    { title: 'Jan 01, 2025', sub: "Personl Meeting", description: 'One-on-one sessions with a licensed therapist to address...', img: '/images/healthcare-post-1.jpg' },
-    { title: 'Jan 01, 2025', sub: "Depression", description: 'Therapy sessions designed to improve communication... ', img: '/images/healthcare-post-2.jpg' },
-    { title: 'Jan 01, 2025', sub: "Mental Consult", description: 'Sessions that involve family  improve... ', img: '/images/healthcare-post-3.jpg' },
-    { title: 'Jan 01, 2025', sub: "Personl Meeting", description: 'One-on-one sessions with a licensed therapist to... ', img: '/images/healthcare-post-1.jpg' },
-    { title: 'Jan 01, 2025', sub: "Depression", description: 'Therapy sessions designed to improve communication...', img: '/images/healthcare-post-2.jpg' },
-    { title: 'Jan 01, 2025', sub: "Mental Consult", description: 'Sessions that involve family  improve...', img: '/images/healthcare-post-3.jpg' },
 
-
-
-];
 
 const Articles = () => {
+
+
+    const cards = [
+        { title: 'Jan 01, 2025', sub: "Personl Meeting", description: 'One-on-one sessions with a licensed therapist to address...', img: '/images/healthcare-post-1.jpg' },
+        { title: 'Jan 01, 2025', sub: "Depression", description: 'Therapy sessions designed to improve communication... ', img: '/images/healthcare-post-2.jpg' },
+        { title: 'Jan 01, 2025', sub: "Mental Consult", description: 'Sessions that involve family  improve... ', img: '/images/healthcare-post-3.jpg' },
+        { title: 'Jan 01, 2025', sub: "Personl Meeting", description: 'One-on-one sessions with a licensed therapist to... ', img: '/images/healthcare-post-1.jpg' },
+        { title: 'Jan 01, 2025', sub: "Depression", description: 'Therapy sessions designed to improve communication...', img: '/images/healthcare-post-2.jpg' },
+        { title: 'Jan 01, 2025', sub: "Mental Consult", description: 'Sessions that involve family  improve...', img: '/images/healthcare-post-3.jpg' },
+
+
+
+    ];
+
     const containerRef = useRef();
     const [currentSlide, setCurrentSlide] = useState(0);
     const cardsPerSlide = 3;
@@ -41,8 +45,27 @@ const Articles = () => {
 
     return (
         <div className="w-full max-w-5xl mx-auto px-4">
+
+
+
             {/* Cards Container */}
             <div className="relative">
+                {/* Left Arrow */}
+                <button
+                    onClick={prevSlide}
+                    className="hidden sm:block absolute left-[-10vh] top-1/2 -translate-y-1/2 z-10 bg-[#156C5F] text-white px-3 py-2 rounded-full shadow hover:bg-[#0e5247] transition"
+                >
+                    ←
+                </button>
+
+                {/* Right Arrow */}
+                <button
+                    onClick={nextSlide}
+                    className="hidden sm:block absolute right-[-10vh] top-1/2 -translate-y-1/2 z-10 bg-[#156C5F] text-white px-3 py-2 rounded-full shadow hover:bg-[#0e5247] transition"
+                >
+                    →
+                </button>
+
                 <div
                     ref={containerRef}
                     className="flex overflow-x-auto scroll-smooth space-x-4 pb-4 -mx-2"
@@ -87,13 +110,13 @@ const Articles = () => {
                                     <h3 className="text-sm text-[#ef7e63] font-semibold">{card.title}</h3>
                                     <h3 className="text-lg sm:text-xl font-bold text-gray-700">{card.sub}</h3>
                                     <p className="text-sm text-gray-600 mt-2">{card.description}</p>
-                                     
-                                      <div className=" mt-2 absolute bottom-0 right-0 left-0 pb-2" >
-                                    <h2 className='text-[#156C5F]'>Read more {'>'}</h2>
-                                     </div>
+
+                                    <div className=" mt-2 absolute bottom-0 right-0 left-0 pb-2" >
+                                        <h2 className='text-[#156C5F]'>Read more {'>'}</h2>
+                                    </div>
                                 </div>
 
-                              
+
                             </div>
                         </div>
                     ))}

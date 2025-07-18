@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-export default function CounterCard({ target = 100, duration = 2000, title = "", icon }) {
+export default function CounterCard({ target = 100, duration = 2000, title = "", icon}) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -43,13 +43,7 @@ export default function CounterCard({ target = 100, duration = 2000, title = "",
   };
 
   return (
-    // <div ref={ref} className="text-center flex flex-col items-center justify-center p-4">
-    //   <div className="icons rounded-[100%] flex mx-autoitems-center bg-[#ef7e63]  w-30 h-30 mt-24 bt-24 mx-auto rounded-[100%] items-center mb-2">
-    //     <img src={icon} alt="icon" className=" p-5 mx-auto w-26 h-26 object-contain" />
-    //   </div>
-    //   <h1 className="text-[60px] text-white ">{count}</h1>
-    //   <h3 className="text-[17px] font-medium text-white mt-2">{title}</h3>
-    // </div>
+ 
 
     <div ref={ref} className="text-center flex flex-col items-center justify-center p-4">
   {/* Icon Circle */}
@@ -57,7 +51,7 @@ export default function CounterCard({ target = 100, duration = 2000, title = "",
     <img
       src={icon}
       alt="icon"
-      className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
+      className="w-10 h-10 sm:w-12 transition-transform duration-400 hover:-translate-y-2 sm:h-12 md:w-14 md:h-14 object-contain"
     />
   </div>
 
