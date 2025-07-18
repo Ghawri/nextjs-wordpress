@@ -8,7 +8,7 @@ export const fetchimage = async (id) => {
     }
 
     const object = await response.json();
-    console.log("data  ;",object.data.sections)
+    console.log("data  ;",object)
     
     return object.data.sections || null;
     
