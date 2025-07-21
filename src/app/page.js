@@ -21,6 +21,7 @@ import Testimonials from "@/components/Testimonials";
 import Aboutus from "@/components/aboutus";
 import SocialIcons from "@/components/socialicons";
 import Footer from "@/components/footer";
+import Loading from "./loading";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,15 +32,21 @@ export default function Home() {
 
 
   const [sections, setSections] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+  
     const getData = async () => {
       const data = await fetchimage(3792);
+      
       console.log(data)
       if (data) setSections(data);
+
+      setLoading(false)
     };
     getData();
   }, []);
+
 
 
 
@@ -96,7 +103,7 @@ export default function Home() {
   ];
 
 
-
+ if(loading) return <Loading/>
   return (
 
 
@@ -105,7 +112,7 @@ export default function Home() {
 
 
 
-
+     
 
 
 
@@ -244,7 +251,7 @@ export default function Home() {
 
       {/* Book with us section */}
 
-      <div className="book-with-us flex flex-col lg:flex-row w-full  h-[40vh] min-h-[50vh] lg:mt-10   ">
+      <div className="book-with-us flex flex-col lg:flex-row w-full pt-10  h-[40vh] min-h-[50vh] lg:mt-10   ">
         {/* Left Section - Orange Box */}
         <div className="w-full lg:w-1/2 bg-[#EE8961] flex items-center justify-center px-6 py-10">
           <div className="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left gap-6 max-w-xl">
@@ -304,8 +311,8 @@ export default function Home() {
 
 
 
-      <div className="tinted-counter bg-[url('/images/bg-image.jpg')] bg-cover bg-center ]"
-
+      <div className="tinted-counter  bg-cover bg-center ]"
+style={{ backgroundImage: `url(/images/bg-image.jpg)` }}
 
       >
         <div className="counters-web flex flex-col md:flex-row justify-evenly items-center w-full max-w-7xl mx-auto py-8 px-4 space-y-6 md:space-y-0">
